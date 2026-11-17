@@ -1,0 +1,3 @@
+-r requirements.txt
+# 测试用：FastAPI TestClient 依赖 httpx
+httpx>=0.27

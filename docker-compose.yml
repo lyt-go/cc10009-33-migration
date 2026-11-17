@@ -5,6 +5,9 @@ services:
       - "8000:8000"
     environment:
       - APP_ENV=local
+      # 先保持旧链路可用，再按 README 的部署顺序逐个任务迁移后打开分阶段入口
+      - SYNC_STAGED_ENABLED=${SYNC_STAGED_ENABLED:-1}
+      - SYNC_LEGACY_CONFIRM_ENABLED=${SYNC_LEGACY_CONFIRM_ENABLED:-1}
   frontend:
     build: ./frontend
     ports:
